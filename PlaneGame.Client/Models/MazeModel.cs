@@ -1,0 +1,17 @@
+﻿namespace PlaneGame.Client.Models
+{
+    public class MazeModel
+    {
+        public enum CellType { Wall, Path, Entry, Exit }
+
+        public struct MazeCell
+        {
+            public MazeCell()
+            {
+                Type = CellType.Wall;
+            }
+            public CellType Type;
+            public bool Visited;
+        }
+    }
+}
