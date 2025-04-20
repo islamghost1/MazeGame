@@ -1,0 +1,24 @@
+﻿    .maze-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .maze-grid {
+        display: grid;
+        gap: 0;
+    }
+
+    .maze-cell {
+        width: 15px;
+        height: 15px;
+        border: none;
+    }
+
+    .wall-cell {
+        background-color: #6c757d;
+    }
+
+    .path-cell {
+        background-color: #212529;
+    }

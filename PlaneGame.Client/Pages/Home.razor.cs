@@ -102,7 +102,7 @@ namespace PlaneGame.Client.Pages
                 }
 
                 await InvokeAsync(StateHasChanged);
-                await Task.Delay(10);
+                await Task.Delay(5);
             }
 
             // Add entry and exit to the maze
@@ -131,7 +131,7 @@ namespace PlaneGame.Client.Pages
                     entryX = x;
                     if (0 < Dimentions.Height && x < Dimentions.Width)
                     {
-                        Maze[0, x] = new MazeCell { Type = CellType.Path, Visited = true };
+                        Maze[0, x] = new MazeCell { Type = CellType.Entry, Visited = true };
                     }
                 }
             }
@@ -152,7 +152,7 @@ namespace PlaneGame.Client.Pages
                         exitX = x;
                         if (bottomRow < Dimentions.Height && x < Dimentions.Width)
                         {
-                            Maze[bottomRow, x] = new MazeCell { Type = CellType.Path, Visited = true };
+                            Maze[bottomRow, x] = new MazeCell { Type = CellType.Exit, Visited = true };
                         }
                     }
                 }
@@ -164,11 +164,11 @@ namespace PlaneGame.Client.Pages
                 int x = random.Next(1, Dimentions.Width - 1);
                 if (0 < Dimentions.Height && x < Dimentions.Width)
                 {
-                    Maze[0, x] = new MazeCell { Type = CellType.Path, Visited = true };
+                    Maze[0, x] = new MazeCell { Type = CellType.Entry, Visited = true };
                 }
                 if (1 < Dimentions.Height && x < Dimentions.Width)
                 {
-                    Maze[1, x] = new MazeCell { Type = CellType.Path, Visited = true };
+                    Maze[1, x] = new MazeCell { Type = CellType.Entry, Visited = true };
                 }
             }
 
@@ -177,11 +177,11 @@ namespace PlaneGame.Client.Pages
                 int x = random.Next(1, Dimentions.Width - 1);
                 if (bottomRow < Dimentions.Height && x < Dimentions.Width)
                 {
-                    Maze[bottomRow, x] = new MazeCell { Type = CellType.Path, Visited = true };
+                    Maze[bottomRow, x] = new MazeCell { Type = CellType.Exit, Visited = true };
                 }
                 if (secondToLastRow < Dimentions.Height && secondToLastRow >= 0 && x < Dimentions.Width)
                 {
-                    Maze[secondToLastRow, x] = new MazeCell { Type = CellType.Path, Visited = true };
+                    Maze[secondToLastRow, x] = new MazeCell { Type = CellType.Exit, Visited = true };
                 }
             }
         }
