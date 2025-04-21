@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1 class="text-center">Maze <i class="bi bi-dpad"></i> Game </h1>
-    <h4 class="text-center">[Recursive Backtracking]</h4>
+    <h4 class="text-center">[Recursive Backtracking | A* Algorithm ]</h4>
     <hr />
 
     <EditForm Model="Dimentions" OnValidSubmit="GenerateMaze" FormName="Dimentions">
@@ -41,7 +41,7 @@
                             @for (int j = 0; j < Maze.GetLength(1); j++)
                             {
                                 var MazeType = Maze[i, j].Type;
-                                <div class="maze-cell @(MazeType == Models.MazeModel.CellType.Wall ? "wall-cell" : "path-cell")"></div>
+                                <div class="maze-cell @(MazeType == Models.MazeModel.CellType.Wall ? "wall-cell" :(MazeType == Models.MazeModel.CellType.solution?"solution-cell": "path-cell"))"></div>
                             }
                         }
                     </div>
@@ -58,6 +58,16 @@
                 <h4 class="alert-heading text-center">Maze Generated!</h4>
             </div>
         </div>
+        <div class="d-flex justify-content-center mt-3">
+            <button type="button" class="btn btn-outline-warning" @onclick="MazeSolved"> Generate Solution A* Algorithm</button>
+
+        </div>
+        <div>
+            <p>
+                Made by @@ISLAM_SCR.
+            </p>
+        </div>
+
     }
 
 

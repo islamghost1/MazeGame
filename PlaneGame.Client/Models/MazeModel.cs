@@ -2,7 +2,7 @@
 {
     public class MazeModel
     {
-        public enum CellType { Wall, Path, Entry, Exit }
+        public enum CellType { Wall, Path, Entry, Exit , solution }
 
         public struct MazeCell
         {

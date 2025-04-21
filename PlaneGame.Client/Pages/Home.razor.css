@@ -10,8 +10,8 @@
     }
 
     .maze-cell {
-        width: 15px;
-        height: 15px;
+        width: 13px;
+        height: 13px;
         border: none;
     }
 
@@ -21,4 +21,7 @@
 
     .path-cell {
         background-color: #212529;
+    }
+    .solution-cell {
+        background-color: #d03636;
     }
